@@ -139,6 +139,8 @@ class GameFragment : Fragment() {
      */
     private fun updateNextWordOnScreen() {
         binding.textViewUnscrambledWord.text = viewModel.currentScrambledWord
+        /*binding.score.text = viewModel.score.toString()
+        binding.wordCount.text = viewModel.currentWordCount.toString()*/
     }
 
     private fun showFinalScoreDialog() {
