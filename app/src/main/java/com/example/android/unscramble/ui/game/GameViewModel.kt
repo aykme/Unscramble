@@ -29,15 +29,15 @@ class GameViewModel : ViewModel() {
 
     private fun getNextWord() {
         currentWord = allWordsList.random()
-        val tempWord = currentWord.toCharArray()
-
-        while (String(tempWord).equals(currentWord, false)) {
-            tempWord.shuffle()
-        }
 
         if (wordsList.contains(currentWord)) {
             getNextWord()
         } else {
+            val tempWord = currentWord.toCharArray()
+
+            while (String(tempWord).equals(currentWord, false)) {
+                tempWord.shuffle()
+            }
             _currentScrambledWord = String(tempWord)
             ++_currentWordCount
             wordsList.add(currentWord)
